@@ -38,7 +38,7 @@ namespace EAAutoFramework.Helpers
             //open file and returns as Stream
             FileStream stream = File.Open(fileName, FileMode.Open, FileAccess.Read);
             //Createopenxmlreader via ExcelReaderFactory
-            IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream); //.xlsx
+            IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream); //.xlsx file
             //Set the First Row as Column Name
             var conf = new ExcelDataSetConfiguration
             {
