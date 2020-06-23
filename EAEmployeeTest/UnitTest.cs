@@ -42,8 +42,12 @@ namespace EAEmployeeTest
 
             ExcelHelpers.PopulateInCollection(fileName);
 
+            LogHelpers.CreateLogFile();
+
             OpenBrowser(BrowserType.Chrome);
+            LogHelpers.Write("Opening Chrome Browser !!!");
             DriverContext.Browser.GoToUrl(url);
+            LogHelpers.Write("Navigated to the page !!!");
             DriverContext.Driver.Manage().Window.Maximize();
 
             /*LoginPage page = new LoginPage();
