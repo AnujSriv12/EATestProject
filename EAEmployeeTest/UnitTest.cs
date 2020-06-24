@@ -5,6 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.IE;
 using System;
+using EAAutoFramework.Config;
 using static EAAutoFramework.Base.Browser;
 
 namespace EAEmployeeTest
@@ -12,8 +13,6 @@ namespace EAEmployeeTest
     [TestClass]
     public class UnitTest : Base
     {
-
-        string url = "http://eaapp.somee.com/";
 
         public void OpenBrowser(BrowserType browserType = BrowserType.Chrome) // optional argument
         {
@@ -38,6 +37,8 @@ namespace EAEmployeeTest
         public void TestSelenium()
         {
 
+            ConfigReader.SetFrameworkSettings();
+
             string fileName = Environment.CurrentDirectory.ToString() + "\\Data\\Login.xlsx";
 
             ExcelHelpers.PopulateInCollection(fileName);
@@ -46,7 +47,7 @@ namespace EAEmployeeTest
 
             OpenBrowser(BrowserType.Chrome);
             LogHelpers.Write("Opening Chrome Browser !!!");
-            DriverContext.Browser.GoToUrl(url);
+            DriverContext.Browser.GoToUrl(Settings.AUT);
             LogHelpers.Write("Navigated to the page !!!");
             DriverContext.Driver.Manage().Window.Maximize();
 
