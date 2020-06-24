@@ -51,16 +51,10 @@ namespace EAEmployeeTest
             LogHelpers.Write("Navigated to the page !!!");
             DriverContext.Driver.Manage().Window.Maximize();
 
-            /*LoginPage page = new LoginPage();
-            page.ClickLoginLink();
-            page.Login("admin", "password");
-
-            CurrentPage = page.ClickEmployeeList();
-            ((EmployeePage)CurrentPage).ClickCreateNew(); */
-
             //Login Page
             CurrentPage = GetInstance<LoginPage>();
             CurrentPage.As<LoginPage>().ClickLoginLink();
+            CurrentPage.As<LoginPage>().CheckIfLoginExist();
             CurrentPage.As<LoginPage>().Login(ExcelHelpers.ReadData(1,"UserName"), ExcelHelpers.ReadData(1, "Password"));
 
             //Employee Page
