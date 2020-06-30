@@ -12,7 +12,7 @@ namespace EAEmployeeTest
     public class UnitTest : HookInitialize
     {
 
-        [TestMethod]
+        /*[TestMethod]
         public void TestSelenium()
         {
             string fileName = Environment.CurrentDirectory.ToString() + "\\Data\\Login.xlsx";
@@ -28,8 +28,8 @@ namespace EAEmployeeTest
 
             //Employee Page
             CurrentPage = CurrentPage.As<LoginPage>().ClickEmployeeList();
-            CurrentPage.As<EmployeePage>().ClickCreateNew();
-        }
+            CurrentPage.As<EmployeeListPage>().ClickCreateNew();
+        }*/
 
         [TestCleanup]
         public void tearDown()

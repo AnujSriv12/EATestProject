@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 namespace EAEmployeeTest.Pages
 {
-    class EmployeePage : BasePage
+    internal class EmployeeListPage : BasePage
     {
         [FindsBy(How = How.LinkText, Using = "searchTerm")]
         public IWebElement txtSearch { get; set; }
